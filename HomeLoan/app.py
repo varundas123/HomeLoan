@@ -30,7 +30,7 @@ def index():
                     emi = round(float(total_disbursed * monthlyrate * (1 + monthlyrate) ** remaining_tenure) /
                                 (((1 + monthlyrate) ** remaining_tenure) - 1))
                                 """
-                elif month % 3 == 1 and total_disbursed < principal:
+                if month % 3 == 1 and total_disbursed < principal:
                     disbursed_amount = min(principal * 10 / 100, principal - total_disbursed)
                     total_disbursed += disbursed_amount
                     emi = round(float(total_disbursed * monthlyrate * (1 + monthlyrate) ** remaining_tenure) /
